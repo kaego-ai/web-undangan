@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="id" class="scroll-smooth">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Undangan Pernikahan Rafael & Clara — Holy Matrimony</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&family=Marcellus&display=swap" rel="stylesheet">
+<script>
+tailwind.config={theme:{extend:{
+  colors:{night:'#0C1814',pine:'#12241C',gold:'#D4B36A',goldlight:'#E8D5A4',ivory:'#F8F4EB'},
+  fontFamily:{script:['Great Vibes','cursive'],serif:['Cormorant Garamond','serif'],caps:['Marcellus','serif']}
+}}};
+</script>
+<style>
+@keyframes kenburns{0%{transform:scale(1)}100%{transform:scale(1.12)}}
+.kenburns{animation:kenburns 16s ease-in-out infinite alternate}
+@keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-8px)}}
+.animate-float{animation:float 5s ease-in-out infinite}
+.reveal{opacity:0;transform:translateY(28px);transition:all 1s cubic-bezier(.2,.6,.2,1)}
+.reveal.show{opacity:1;transform:none}
+.frame{border:1px solid rgba(212,179,106,.5);outline:1px solid rgba(212,179,106,.25);outline-offset:6px}
+</style>
+</head>
+<body class="bg-night text-ivory antialiased overflow-hidden">
+
+<!-- GANTI: nama, tanggal, rekening, nomor WA — sesuai client -->
+
+<!-- COVER -->
+<div id="cover" class="fixed inset-0 z-50 flex items-center justify-center bg-night px-6">
+  <div class="frame relative w-full max-w-sm rounded-sm bg-pine/80 p-8 text-center">
+    <p class="text-gold text-2xl">✝</p>
+    <p class="mt-2 font-caps text-[10px] tracking-[.4em] text-gold uppercase">Undangan Pernikahan</p>
+    <h1 class="mt-4 font-script text-6xl text-goldlight">Rafael & Clara</h1>
+    <p class="mt-2 font-serif italic text-ivory/70">Sabtu, 20 Februari 2027</p>
+    <div class="mt-8 border-t border-gold/30 pt-5">
+      <p class="text-xs text-ivory/60">Kepada Yth. Bapak/Ibu/Saudara/i</p>
+      <p id="guest" class="mt-1 font-serif text-xl font-semibold text-gold">Tamu Undangan</p>
+    </div>
+    <button id="buka" class="mt-6 w-full rounded-full border border-gold py-3 font-caps text-xs tracking-[.3em] uppercase text-gold hover:bg-gold hover:text-night transition">Buka Undangan</button>
+  </div>
+</div>
+
+<button id="musik" class="fixed bottom-4 right-4 z-40 hidden h-11 w-11 items-center justify-center rounded-full border border-gold bg-night/80 text-gold">🎵</button>
+<audio id="lagu" loop src=""></audio>
+
+<main class="max-w-2xl mx-auto">
+
+  <!-- HERO -->
+  <section class="relative flex min-h-screen items-end overflow-hidden">
+    <img src="hero.jpg" alt="Rafael & Clara" class="kenburns absolute inset-0 h-full w-full object-cover">
+    <div class="absolute inset-0 bg-gradient-to-t from-night via-night/40 to-night/20"></div>
+    <div class="relative w-full px-6 pb-16 pt-40 text-center">
+      <p class="font-caps text-[10px] tracking-[.5em] text-gold uppercase">Holy Matrimony</p>
+      <h1 class="mt-4 font-script text-7xl text-ivory drop-shadow-lg">Rafael & Clara</h1>
+      <p class="mt-3 font-serif text-lg italic text-ivory/80">Sabtu, 20 Februari 2027</p>
+      <div class="mt-8 flex justify-center gap-3">
+        <div class="frame w-16 bg-night/60 py-3 backdrop-blur"><p id="d" class="font-serif text-2xl text-gold">0</p><p class="text-[9px] uppercase tracking-widest text-ivory/60">Hari</p></div>
+        <div class="frame w-16 bg-night/60 py-3 backdrop-blur"><p id="h" class="font-serif text-2xl text-gold">0</p><p class="text-[9px] uppercase tracking-widest text-ivory/60">Jam</p></div>
+        <div class="frame w-16 bg-night/60 py-3 backdrop-blur"><p id="m" class="font-serif text-2xl text-gold">0</p><p class="text-[9px] uppercase tracking-widest text-ivory/60">Menit</p></div>
+        <div class="frame w-16 bg-night/60 py-3 backdrop-blur"><p id="s" class="font-serif text-2xl text-gold">0</p><p class="text-[9px] uppercase tracking-widest text-ivory/60">Detik</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- AYAT -->
+  <section class="px-8 py-16 text-center">
+    <p class="reveal text-gold text-2xl">✝</p>
+    <p class="reveal mt-6 font-serif text-xl italic leading-relaxed text-ivory/85">
+      "Kasih itu sabar; kasih itu murah hati; ia tidak cemburu. Ia tidak memegahkan diri dan tidak sombong."
+    </p>
+    <p class="reveal mt-4 font-caps text-xs tracking-[.4em] text-gold uppercase">1 Korintus 13 : 4</p>
+  </section>
+
+  <!-- MEMPELAI -->
+  <section class="px-8 py-10 text-center">
+    <p class="reveal font-caps text-xs tracking-[.4em] text-gold uppercase">Mempelai</p>
+    <h2 class="reveal mt-2 font-script text-5xl text-goldlight">Dengan rasa syukur</h2>
+    <div class="reveal mt-10">
+      <div class="animate-float mx-auto flex h-28 w-28 items-center justify-center rounded-full border border-gold/60 bg-pine font-script text-5xl text-gold">R</div>
+      <h3 class="mt-4 font-serif text-3xl font-semibold">Rafael Aditya Wijaya</h3>
+      <p class="mt-1 font-serif italic text-ivory/60">Putra pertama dari Bapak Yohanes Wijaya & Ibu Maria Kartika</p>
+    </div>
+    <p class="reveal my-8 font-script text-5xl text-gold">&</p>
+    <div class="reveal">
+      <div class="animate-float mx-auto flex h-28 w-28 items-center justify-center rounded-full border border-gold/60 bg-pine font-script text-5xl text-gold">C</div>
+      <h3 class="mt-4 font-serif text-3xl font-semibold">Clara Maria Santoso</h3>
+      <p class="mt-1 font-serif italic text-ivory/60">Putri kedua dari Bapak Andreas Santoso & Ibu Lucia Hermawan</p>
+    </div>
+  </section>
+
+  <!-- ACARA -->
+  <section class="relative py-16 overflow-hidden">
+    <img src="gereja.jpg" alt="Gereja" class="absolute inset-0 h-full w-full object-cover">
+    <div class="absolute inset-0 bg-night/80"></div>
+    <div class="relative px-8 text-center">
+      <p class="reveal font-caps text-xs tracking-[.4em] text-gold uppercase">Rangkaian Acara</p>
+      <div class="mt-8 space-y-6">
+        <div class="reveal frame mx-auto max-w-md bg-night/70 p-7 backdrop-blur">
+          <p class="font-caps text-xs tracking-[.3em] text-gold uppercase">Pemberkatan Nikah</p>
+          <p class="mt-3 font-serif text-2xl font-semibold">Sabtu, 20 Februari 2027</p>
+          <p class="text-sm text-ivory/70">Pukul 10.00 WIB</p>
+          <p class="mt-2 font-serif italic text-ivory/80">Gereja Santa Maria Bunda Allah<br>Jl. Kenanga No. 8, Jakarta</p>
+          <a href="https://maps.google.com/?q=Gereja+Katolik+Jakarta" target="_blank" class="mt-4 inline-block rounded-full border border-gold px-5 py-2 text-xs font-caps tracking-[.2em] uppercase text-gold hover:bg-gold hover:text-night transition">📍 Lihat Lokasi</a>
+        </div>
+        <div class="reveal frame mx-auto max-w-md bg-night/70 p-7 backdrop-blur">
+          <p class="font-caps text-xs tracking-[.3em] text-gold uppercase">Resepsi Pernikahan</p>
+          <p class="mt-3 font-serif text-2xl font-semibold">Sabtu, 20 Februari 2027</p>
+          <p class="text-sm text-ivory/70">Pukul 12.00 – 15.00 WIB</p>
+          <p class="mt-2 font-serif italic text-ivory/80">The Grand Ballroom<br>Hotel Mulia, Jakarta</p>
+          <a href="https://calendar.google.com/calendar/render?action=TEMPLATE&text=Pernikahan+Rafael+%26+Clara&dates=20270220T030000Z/20270220T080000Z" target="_blank" class="mt-4 inline-block rounded-full border border-gold px-5 py-2 text-xs font-caps tracking-[.2em] uppercase text-gold hover:bg-gold hover:text-night transition">📅 Simpan Tanggal</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- GALERI -->
+  <section class="px-8 py-16">
+    <p class="reveal text-center font-caps text-xs tracking-[.4em] text-gold uppercase">Galeri Kami</p>
+    <h2 class="reveal mt-2 text-center font-script text-5xl text-goldlight">Momen Berharga</h2>
+    <div class="mt-10 space-y-6">
+      <img src="couple2.jpg" alt="Prewedding" class="reveal frame w-full rounded-sm object-cover">
+      <div class="grid grid-cols-2 gap-6">
+        <img src="detail.jpg" alt="Cincin & Rosario" class="reveal frame w-full rounded-sm object-cover">
+        <img src="gereja.jpg" alt="Gereja" class="reveal frame w-full rounded-sm object-cover">
+      </div>
+    </div>
+  </section>
+
+  <!-- RSVP -->
+  <section class="px-8 py-10">
+    <p class="reveal text-center font-caps text-xs tracking-[.4em] text-gold uppercase">RSVP</p>
+    <h2 class="reveal mt-2 text-center font-script text-5xl text-goldlight">Konfirmasi Kehadiran</h2>
+    <form id="rsvp" class="reveal frame mx-auto mt-8 max-w-md space-y-3 bg-pine/70 p-7 backdrop-blur">
+      <input id="fNama" required placeholder="Nama Anda" class="w-full rounded-sm border border-gold/30 bg-night/60 px-4 py-3 font-serif text-sm outline-none focus:border-gold">
+      <select id="fHadir" class="w-full rounded-sm border border-gold/30 bg-night/60 px-4 py-3 font-serif text-sm outline-none focus:border-gold">
+        <option>✅ Hadir</option><option>❌ Berhalangan</option>
+      </select>
+      <textarea id="fPesan" rows="3" placeholder="Ucapan & doa restu" class="w-full rounded-sm border border-gold/30 bg-night/60 px-4 py-3 font-serif text-sm outline-none focus:border-gold"></textarea>
+      <button class="w-full rounded-full bg-gold py-3 font-caps text-xs tracking-[.3em] uppercase text-night hover:brightness-110 transition">Kirim Konfirmasi</button>
+    </form>
+  </section>
+
+  <!-- AMPLOP -->
+  <section class="px-8 py-10 text-center">
+    <p class="reveal font-caps text-xs tracking-[.4em] text-gold uppercase">Wedding Gift</p>
+    <h2 class="reveal mt-2 font-script text-5xl text-goldlight">Amplop Digital</h2>
+    <p class="reveal mt-3 font-serif italic text-ivory/60">Doa restu Anda adalah hadiah terindah.<br>Jika berkenan memberi tanda kasih:</p>
+    <div class="mx-auto mt-8 max-w-md space-y-4">
+      <div class="reveal frame bg-pine/70 p-6">
+        <p class="font-serif text-xl font-semibold text-gold">BCA · 1234567890</p>
+        <p class="text-xs text-ivory/60">a.n. Rafael Aditya Wijaya</p>
+        <button onclick="salin('1234567890',this)" class="mt-3 rounded-full border border-gold px-5 py-1.5 text-xs font-caps tracking-[.2em] uppercase text-gold hover:bg-gold hover:text-night transition">Salin</button>
+      </div>
+      <div class="reveal frame bg-pine/70 p-6">
+        <p class="font-serif text-xl font-semibold text-gold">Mandiri · 9876543210</p>
+        <p class="text-xs text-ivory/60">a.n. Clara Maria Santoso</p>
+        <button onclick="salin('9876543210',this)" class="mt-3 rounded-full border border-gold px-5 py-1.5 text-xs font-caps tracking-[.2em] uppercase text-gold hover:bg-gold hover:text-night transition">Salin</button>
+      </div>
+    </div>
+  </section>
+
+  <footer class="px-8 pb-14 pt-6 text-center">
+    <p class="reveal font-script text-4xl text-goldlight">Rafael & Clara</p>
+    <p class="reveal mt-3 font-serif italic text-sm text-ivory/60">Merupakan kehormatan bagi kami apabila Bapak/Ibu berkenan hadir dan memberikan doa restu.</p>
+    <p class="reveal mt-6 text-[10px] tracking-widest text-ivory/40">UNDANGAN DIGITAL OLEH <a href="https://kaego.id" class="text-gold hover:underline">KAEGO</a> · KAEGO.ID</p>
+  </footer>
+
+</main>
+
+<script>
+const to=new URLSearchParams(location.search).get('to');
+if(to)document.getElementById('guest').textContent=to;
+
+document.getElementById('buka').onclick=()=>{
+  document.getElementById('cover').style.display='none';
+  document.body.classList.remove('overflow-hidden');
+  const l=document.getElementById('lagu');
+  if(l.getAttribute('src')){l.play().catch(()=>{});const m=document.getElementById('musik');m.classList.remove('hidden');m.classList.add('flex');}
+};
+let putar=true;
+document.getElementById('musik').onclick=e=>{const l=document.getElementById('lagu');putar=!putar;putar?l.play():l.pause();e.currentTarget.textContent=putar?'🎵':'🔇';};
+
+const t=new Date('2027-02-20T10:00:00+07:00');
+setInterval(()=>{let x=Math.max(0,t-Date.now());
+  document.getElementById('d').textContent=Math.floor(x/86400000);
+  document.getElementById('h').textContent=Math.floor(x/3600000)%24;
+  document.getElementById('m').textContent=Math.floor(x/60000)%60;
+  document.getElementById('s').textContent=Math.floor(x/1000)%60;},1000);
+
+function salin(t,b){navigator.clipboard.writeText(t).then(()=>{const o=b.textContent;b.textContent='✅ Tersalin!';setTimeout(()=>b.textContent=o,1500);});}
+
+document.getElementById('rsvp').onsubmit=e=>{e.preventDefault();
+  window.open('https://wa.me/628998825788?text='+encodeURIComponent('Konfirmasi Kehadiran — Rafael & Clara\nNama: '+fNama.value+'\nKehadiran: '+fHadir.value+'\nUcapan: '+fPesan.value));};
+
+const obs=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('show');obs.unobserve(e.target)}}),{threshold:.15});
+document.querySelectorAll('.reveal').forEach(el=>obs.observe(el));
+</script>
+</body>
+</html>
